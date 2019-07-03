@@ -43,24 +43,17 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  //int x=0;
   while(Serial.available()>0)
   {
-    transform(Serial.read());
+    transform(Serial.read());   //转化ASCII码为Morse电码
     int i=0;
     for(i=0;i<4;i++)
     {
       if(str[i]=='*')
-      morse.dot();
+      morse.dot();       //短亮
       if(str[i]=='-')
-      morse.dash();      
+      morse.dash();      //长亮
     }
-    //morse.concat(str);
-    //morse+=' ';
     delay(350);
-    //x=1;
   }
-  //if(x==1)
-  //Serial.println(morse);
 }
