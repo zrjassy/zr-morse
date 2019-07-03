@@ -1,3 +1,5 @@
+#include <Morse.h>
+
 String str="";    //每一个字符对应的Morse电码表示
 void transform(int n) //转化函数，根据读取的ASCII码转化为Morse电码表示
 {
@@ -34,7 +36,7 @@ void transform(int n) //转化函数，根据读取的ASCII码转化为Morse电�
     default:break;
   }
 }
-
+Morse morse(13);
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);//设置波特率为9600
@@ -42,16 +44,23 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  String morse="";
-  int x=0;
+  //int x=0;
   while(Serial.available()>0)
   {
-    transform(Serial.read());   //对读取到的ASCII码进行转化
-    morse.concat(str);          //将str添加到morse中去
-    morse+=' ';                 //字符两两之间添加一个空格
-    delay(10);                  //延迟10ms
-    x=1;                        //标志
+    transform(Serial.read());
+    int i=0;
+    for(i=0;i<4;i++)
+    {
+      if(str[i]=='*')
+      morse.dot();
+      if(str[i]=='-')
+      morse.dash();      
+    }
+    //morse.concat(str);
+    //morse+=' ';
+    delay(350);
+    //x=1;
   }
-  if(x==1)
-  Serial.println(morse);
+  //if(x==1)
+  //Serial.println(morse);
 }
