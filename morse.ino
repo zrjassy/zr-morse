@@ -56,5 +56,6 @@ void loop() {
       delay(10);         //Morse电码之间的间隔
     }
     delay(350);          //字符与字符之间间隔
+    str="";              
   }
 }
