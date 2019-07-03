@@ -46,11 +46,11 @@ void loop() {
   int x=0;
   while(Serial.available()>0)
   {
-    transform(Serial.read());
-    morse.concat(str);
-    morse+=' ';
-    delay(10);
-    x=1;
+    transform(Serial.read());   //对读取到的ASCII码进行转化
+    morse.concat(str);          //将str添加到morse中去
+    morse+=' ';                 //字符两两之间添加一个空格
+    delay(10);                  //延迟10ms
+    x=1;                        //标志
   }
   if(x==1)
   Serial.println(morse);
