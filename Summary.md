@@ -95,6 +95,8 @@ Arduino模拟网站————http://www.tinkercad.com/
 
 > 在在线模拟平台模拟morse代码转化
 
+> 将第三天的数码管代码和电路拓展到4个数码管
+
 > 学习Markdown的编写方式，用Markdown格式编写总结报告
 
 
