@@ -1,4 +1,4 @@
-#include <Morse.h>
+#include "Morse.h"
 
 String str="";    //每一个字符对应的Morse电码表示
 void transform(int n) //转化函数，根据读取的ASCII码转化为Morse电码表示
@@ -53,9 +53,9 @@ void loop() {
       morse.dot();       //短亮
       if(str[i]=='-')
       morse.dash();      //长亮
-      delay(10);         //Morse电码之间的间隔
+      delay(350);         //Morse电码之间的间隔
     }
-    delay(350);          //字符与字符之间间隔
+    delay(350*7);          //字符与字符之间间隔
     str="";              
   }
 }
